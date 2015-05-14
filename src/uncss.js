@@ -75,12 +75,24 @@ function getStylesheets(files, options, pages) {
  * @param  {Array}   files       List of HTML files
  * @param  {Object}  options     UnCSS options
  * @param  {Array}   pages       Pages opened by phridge
- * @param  {Array}   stylesheets List of CSS files
+ * @param  {Array}   stylesheets List of CSS files , file stylesheets[0] is urls, and stylesheets[1] is inline styles
  * @return {promise}
  */
 function getCSS(files, options, pages, stylesheets) {
+    /* inline styles */
+    var styles = _.chain(stylesheets)
+                  .map(function(fileStylesheet){
+                      return fileStylesheet[1]; 
+                  })
+                  .flatten()
+                  .value();
+
+    stylesheets = stylesheets.map(function(fileStylesheet){
+        return fileStylesheet[0]; 
+    });
+
     /* Ignore specified stylesheets */
-    if (options.ignoreSheets.length) {
+    /*if (options.ignoreSheets.length) {
         stylesheets = stylesheets.map(function (arr) {
             return arr.filter(function (sheet) {
                 return _.every(options.ignoreSheets, function (ignore) {
@@ -91,8 +103,9 @@ function getCSS(files, options, pages, stylesheets) {
                 });
             });
         });
-    }
+    }*/
 
+    /*外链css*/
     if (_.flatten(stylesheets).length) {
         /* Only run this if we found links to stylesheets (there may be none...)
          *  files       = ['some_file.html', 'some_other_file.html']
@@ -110,11 +123,14 @@ function getCSS(files, options, pages, stylesheets) {
             .flatten()
             .uniq()
             .value();
+
+        stylesheets = utility.readStylesheets(stylesheets);
+
     } else {
         /* Reset the array if we didn't find any link tags */
         stylesheets = [];
     }
-    return [files, options, pages, utility.readStylesheets(stylesheets)];
+    return [files, options, pages, stylesheets.concat(styles) ];
 }
 
 /**
@@ -155,13 +171,20 @@ function process(files, options, pages, stylesheets) {
         parsed, report;
 
     try {
-        parsed = css.parse(cssStr);
+        parsed = css.parse(cssStr, { silent : true });
     } catch (err) {
         /* Try and construct a helpful error message */
         throw utility.parseErrorMessage(err, cssStr);
     }
+
     return uncss(pages, parsed.stylesheet, options.ignore).spread(function (used, rep) {
         var usedCss = css.stringify(used);
+        var unusedSelector= used.unused.rules.map(function(rule){
+            return rule.selectors.join(' , '); 
+        }).join('\n');
+
+        console.log(unusedSelector);
+
         if (options.report) {
             report = {
                 original: cssStr,

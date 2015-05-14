@@ -252,6 +252,21 @@ function filterUnusedRules(pages, stylesheet, ignore, usedSelectors) {
     };
 }
 
+function filterNoDecalarationSelector(rules){
+    return rules.filter(function(rule){
+        if(!rule.declarations && rule.type == "rule"){ 
+            console.log("selector: "+rule.selectors.join(', ') +" has no declarations!");
+            return false;
+        }
+
+        if(rule.type == "media"){
+            rule.rules = filterNoDecalarationSelector(rule.rules);
+            return rule.rules.length;
+        }
+        return true;
+    });
+}
+
 /**
  * Main exposed function
  * @param  {Array}   pages      List of PhantomJS pages
@@ -260,6 +275,9 @@ function filterUnusedRules(pages, stylesheet, ignore, usedSelectors) {
  * @return {promise}
  */
 module.exports = function uncss(pages, stylesheet, ignore) {
+    /* filter selectors with no declarations*/
+    stylesheet.rules = filterNoDecalarationSelector(stylesheet.rules);
+
     return promise.map(pages, function (page) {
         return getUsedSelectors(page, stylesheet);
     }).then(function (usedSelectors) {

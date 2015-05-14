@@ -155,6 +155,7 @@ function fromRemote(url, options) {
 
 /**
  * Extract stylesheets' hrefs from dom
+ * Get inline style from dom
  * @param  {Object}  page       A PhantomJS page
  * @param  {Object}  options    Options, as passed to UnCSS
  * @return {promise}
@@ -164,16 +165,27 @@ function getStylesheets(page, options) {
         options.media = [options.media];
     }
     var media = _.union(['', 'all', 'screen'], options.media);
-    return page.run(function () {
-        /* jshint browser: true */
-        /* eslint-env browser */
-        return this.evaluate(function () {
-            return Array.prototype.map.call(document.querySelectorAll('link[rel="stylesheet"]'), function (link) {
-                return { href: link.href, media: link.media };
+    return promise.all([
+        page.run(function () {
+            /* jshint browser: true */
+            /* eslint-env browser */
+            return this.evaluate(function () {
+                return Array.prototype.map.call(document.querySelectorAll('link[rel="stylesheet"]'), function (link) {
+                    return { href: link.href, media: link.media };
+                });
             });
-        });
-        /* jshint browser: false */
-    }).then(function (stylesheets) {
+            /* jshint browser: false */
+        }),
+
+        /* inline style */
+        page.run(function(){
+            return this.evaluate(function(){
+                return Array.prototype.map.call(document.querySelectorAll('style'), function (style){
+                    return style.innerHTML; 
+                }); 
+            }); 
+        })
+    ]).spread(function (stylesheets, styles) {
         stylesheets = _
             .toArray(stylesheets)
             /* Match only specified media attributes, plus defaults */
@@ -183,7 +195,7 @@ function getStylesheets(page, options) {
             .map(function (sheet) {
                 return sheet.href;
             });
-        return stylesheets;
+        return [stylesheets, styles];
     });
 }
 
