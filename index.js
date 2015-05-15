@@ -7,6 +7,8 @@
         //data = require('../package.json'),
         program = require('commander');
 
+    var defaultIgnores = require('./src/ignore.js');
+
     var buffer = '',
         options;
 
@@ -29,7 +31,7 @@
         .parse(process.argv);
 
     options = {
-        ignore: program.ignore,
+        ignore: (program.ignore || []).concat(defaultIgnores),
         ignoreSheets: program.ignoreSheets,
         media: program.media,
         csspath: program.csspath,

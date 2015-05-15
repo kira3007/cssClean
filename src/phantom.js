@@ -7,6 +7,7 @@ var path = require('path'),
     _ = require('lodash');
 
 var phantom;
+var action = require('./action');
 
 /**
  * Create the PhantomJS instances, or use the given one.
@@ -89,10 +90,22 @@ function ResourceHandler(htmlroot, isWindows, resolve) {
  */
 function resolveWithPage(page, options) {
     return function () {
-        return new promise(function (resolve) {
-            setTimeout(function () {
-                return resolve(page);
-            }, options.timeout);
+//        return new promise(function (resolve) {
+        return promise.all(
+         [
+            //延时操作
+            new promise(function (resolve) {
+                setTimeout(function () {
+                    return resolve(page);
+                }, options.timeout);
+            })
+
+        //一些额外的操作
+        ].concat(action.invoke(page, options))
+
+        //向后只传递一个page
+        ).spread(function(){
+            return arguments[0]; 
         });
     };
 }
