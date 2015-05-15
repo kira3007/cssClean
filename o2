@@ -1,0 +1,377 @@
+selector: .c-icon has no declarations!
+#fm
+.bg_tuiguang_browser
+.bg_tuiguang_browser_big
+.bg_tuiguang_weishi
+#nv a , #nv b , .btn , #lk
+#nv
+.s_btn_h
+#lk
+#lk span
+#shouji
+#fm
+#lk
+#nv
+#pad-version
+.s_btn.btnhover
+.s_btn_h
+#index_logo img
+#head .c-icon-bear-round
+#mCon .hw
+#mCon .pinyin
+#mCon .c-icon-chevron-unfold2
+#user ul
+#u1 .reg
+#u1 a.username
+#u1 a.bri.brihover
+#u1 #lm a
+.briiconsbg
+.s-isindex-wrap #wrapper .bdnuarrow
+#prefpanel
+#prefpanel form
+#wrapper .bdbri.bdbriimg .bdothlink a
+#wrapper .bdbri.bdbriimg .bdothlink a:visited
+#wrapper .bdbri.bdbriimg .bdothlink a:hover
+#wrapper .bdbri.bdbriimg .bdothlink a:active
+#wrapper .bdbri.bdbriimg .bdbrimore
+.bdbriscroll-ctrl-scroll-touch .bdbriscroll-axis
+.bdbriscroll-ctrl-scroll-hover .bdbriscroll-axis
+.bdbriscroll-ctrl-scroll-touch .bdbriscroll-slider , .bdbriscroll-ctrl-scroll-hover .bdbriscroll-slider
+#debug
+#sekj
+#st , #sekj
+.s_ipt_wr.ipthover
+#u .username i
+.usermenu
+.usermenu a
+.briiconsbg
+#u div a
+#u .back_org
+#u .bri
+#u .bri:hover , #u .bri.brihover
+#mCon #imeSIcon
+#u .usermenu a:link , #u .usermenu a:visited
+#u .usermenu a:hover , #u .usermenu a:active
+.usermenu
+#prefpanel
+#prefpanel form
+#bds-message-wrapper
+.wrapper_l .quickdelete-wrap input
+.p1 , .p2
+ol , dl , dt , dd
+cite
+a.g
+.f14
+.f10
+.f16
+.bg_tuiguang_browser
+.bg_tuiguang_browser_big
+.bg_tuiguang_weishi
+#tool , #search
+.logo
+.p1
+.p2
+.container_l
+.container_l #content_right
+.content_none
+#u .reg
+#u .last
+#u .un
+#u ul
+#u li
+#u li a
+#u li a:hover
+#u li.nl
+#user
+#user_center
+#user_center .user_center_btn
+.userMenu
+.nv a , .nv b , .btn , #more
+.s_nav
+.s_nav .s_logo
+.s_nav .s_logo img
+.s_nav a
+.s_nav b
+.s_btn_h
+.sethf
+.set_h
+.set_f
+.shouji
+.shouji a
+#search form
+#tb_mr
+#tb_mr b
+#tb_mr small
+#page .nums
+#rs_top
+#rs_top a
+#container .rs
+#container .noback
+#content_left .rs
+#container .rs table
+#container .rs td
+#container .rs th
+#container .rs .tt
+#container .rs a
+#container .rs a:hover
+#search
+#search .s_help
+.site_tip
+.site_tip_icon
+.to_zhidao , .to_tieba , .to_zhidao_bottom
+.to_tieba .c-icon-tieba
+.f
+.h
+.r
+.pl
+.mo , a.mo:link , a.mo:visited
+.htb
+.jc a
+a font[size="3"] font , font[size="3"] a font
+div.blog , div.bbs
+.result-op .f
+.wrapper_l #mCon
+#mCon .hw
+#mCon .pinyin
+#mCon .c-icon-chevron-unfold2
+.op_LAMP
+.EC_mr15
+.pd15
+.map_1
+.map_2
+.favurl
+.dan_tip
+.dan_tip a
+#more , #u ul , .msg_holder
+.hit_top
+.hit_top .c-icon-bear
+#rs_top_new , .hit_top_new
+.zhannei-si
+.zhannei-si-none
+.zhannei-search
+.f a font[size="3"] font , .f font[size="-1"] a font
+h3 a font
+.c-showurl-color
+.ecard
+.icp_info
+.icon-gw , .icon-unsafe-icon
+a.icon-gw
+a.icon-gw:hover
+a.icon-gw:active
+.icon-unsafe-icon
+#con-at
+#con-at .result-op
+.wrapper_l #con-at .result-op
+.wrapper_s #con-at .result-op
+#content_left .c-border .result-op , #content_left .c-border .result
+#content_left .c-border .result-op:last-child , #content_left .c-border .result:last-child
+#content_left .result .f , #content_left .result-op .f
+.subLink_factory_left td
+.subLink_factory_left td.last
+.subLink_factory_left td.first
+.res_top_banner
+.res_top_banner span
+.res_top_banner .res_top_banner_icon
+.res_top_banner .res_top_banner_icon_baiduapp
+.res_top_banner .res_top_banner_download
+.res_top_banner .res_top_banner_download:hover
+.res_top_banner .res_top_banner_download:active
+.res_top_banner .res_top_banner_close
+.res-border-top
+.res-border-bottom
+#pad-version
+#index_guide
+#index_logo
+#head.s_down
+.to_tieba , .to_zhidao_bottom
+#foot .foot_c
+.content_none
+.nors p
+.nors p em
+.nors .tip_head
+.nors li
+.s_btn.btnhover
+.s_btn_h
+#wrapper_wrapper .container_l .EC_ppim_top , #wrapper_wrapper .container_xl .EC_ppim_top
+#wrapper_wrapper .container_s .EC_ppim_top
+#head .c-icon-bear-round
+.container_l #content_right
+.container_l
+.container_xl #content_right
+.container_xl
+.index_tab_top
+.index_tab_bottom
+#ent_sug
+.foot_fixed_bottom
+#content_left .leftBlock
+.search_tool_conter span strong
+.op_cal table
+.op_btn_pre_month , .op_btn_next_month
+.op_btn_pre_month
+.op_btn_next_month
+.op_cal .op_mon_pre1
+.op_mon th
+.op_mon td
+.op_mon h5
+.op_mon strong
+.op_mon td
+.op_mon td.op_mon_pre_month
+.op_mon td.op_mon_cur_month
+.op_mon td.op_mon_next_month
+.op_mon td.op_mon_day_hover
+.op_mon td.op_mon_day_selected
+.op_mon td.op_mon_day_disabled
+.zhannei-si-none , .zhannei-si , .hit_quet , .zhannei-search
+.cr-content table
+.cr-content td
+.c-span2
+.c-span3
+.c-span5
+.c-span7
+.c-span8
+.c-span9
+.c-span10
+.c-span11
+.c-span12
+.c-span13
+.c-span14
+.c-span15
+.c-span16
+.c-span17
+.c-span19
+.c-span20
+.c-span21
+.c-span22
+.c-span23
+.c-span24
+.c-span2 , .c-span3 , .c-span5 , .c-span7 , .c-span8 , .c-span9 , .c-span10 , .c-span11 , .c-span12 , .c-span13 , .c-span14 , .c-span15 , .c-span16 , .c-span17 , .c-span19 , .c-span20 , .c-span21 , .c-span22 , .c-span23 , .c-span24
+.container_l .cr-content
+.container_l .cr-content .c-span-last-s
+.container_l .cr-content-narrow
+.container_l .cr-content-narrow .c-span-last-s
+a.c-text
+a.c-btn
+button.c-btn
+button.c-btn-mini
+button.c-btn-large
+.cr-content .c-table th:first-child , .cr-content .c-table td:first-child
+#sekj
+#st , #sekj
+.s_ipt_wr.ipthover
+#u .username i
+.usermenu
+.usermenu a
+.briiconsbg
+#u div a
+#u .back_org
+#u .bri
+#u .bri:hover , #u .bri.brihover
+#mCon #imeSIcon
+#u .usermenu a:link , #u .usermenu a:visited
+#u .usermenu a:hover , #u .usermenu a:active
+.usermenu
+#prefpanel
+#prefpanel form
+#bds-message-wrapper
+.wrapper_l .quickdelete-wrap input
+.EC_pic a
+#ec_im_container .EC_idea1009
+.icon
+.wzxKScip
+.wzxKScip_content
+.wzxKScip_dir
+.wzxKScip_title
+.bPkITm
+.icon
+.icon-coupon
+.icon-tel
+.icon-yiliao
+.icon-vshenfen
+.ec_vshenfen_level
+.ec_vshenfen_level1
+.ec_vshenfen_level2
+.ec_vshenfen_level3
+.ec_vshenfen_level4
+.ec_vshenfen_level5
+.EC_certify_tip .icon
+.wzxKScip
+.wzxKScip_content
+.EC_certify_tip li
+.EC_certify_tip li img
+.EC_certify_tip_logo , .EC_safeguard_tip_logo
+.wzxKScip_dir
+.wzxKScip_title
+.op_dict3_chinese_result span
+.op_dict3_chinsetxt
+.op_dict3_howread
+.op_dict3_marginBottom
+.op_dict3_chinese_result_table
+.op_dict3_chinese_result_table .op_dict_text1
+.op_dict3_chinese_result_table .op_dict_text2
+.op_dict3_chineselong_result
+.op_dict3_how_read , .op_dict3_mp3_play
+.op_dict3_mp3_play
+.op_dict3_font14
+.op_dict3_how_read a , .op_dict3_how_read span
+.op_dict3_how_read a
+.op_dict3_etext
+.op_dict3_read2
+.op-bk-polysemy-other span
+.op-bk-polysemy-space
+.op-bk-polysemy-oneother .op-bk-polysemy-move , .op-bk-polysemy-oneother span
+.op-bk-polysemy-focus
+.op-bk-polysemy-focustext
+.op-bk-polysemy-focus a
+.op-bk-polysemy-focus a.op-bk-polysemy_focusafirst
+.op-bk-polysemy-focusf
+.op-bk-polysemy-focusleft
+.op-bk-polysemy-focusrightf , .op-bk-polysemy-focustextf
+.op-bk-polysemy-focustextf
+.op-bk-polysemy-focustextf span
+.op-bk-polysemy-focusrightf
+.op-bk-polysemy-focusrightf span
+.op-bk-polysemy-focusrightf a
+.op-bk-polysemy-focusrightf a.op-bk-polysemy_focusrfirst
+.op-bk-polysemy-albumPr
+.op-bk-polysemy-albumMore
+.op-bk-polysemy-albumBorder
+.op-bk-polysemy-albumBorderSec
+.op_tieba2_tablinks_container
+.opr-recommends-merge-title
+.opr-recommends-merge-title:hover
+.opr-recommends-merge-layerbtn
+.opr-recommends-merge-layerbtn1 , .opr-recommends-merge-layerbtn2
+.opr-recommends-merge-layerbtn1 , .opr-recommends-merge-layerbtn3
+.opr-recommends-merge-layerbtn1:hover , .opr-recommends-merge-layerbtn2 , .opr-recommends-merge-layerbtn3:hover , .opr-recommends-merge-layerbtn4
+.opr-recommends-merge-layerbtn3:hover , .opr-recommends-merge-layerbtn4:hover
+.opr-recommends-merge-layer
+.opr-recommends-merge-layer table
+.opr-recommends-merge-layer td
+.container_l .opr-recommends-merge-lastspan
+.container_l .cr-content-narrow .opr-recommends-merge-lastspan
+.opr-recommends-merge-dodge-wrap
+.opr-recommends-merge-item-vertical .opr-recommends-merge-p , .opr-recommends-merge-item-vertical .opr-recommends-merge-img
+.ad-widget-header em
+.ad-widget-header .ec-image
+.ad-widget-header .ec-tip-image
+.ad-widget-header .ec-figcaption p
+#m1335783451_canvas .ec-description
+#m1335783451_canvas.ec-ipad
+#m1335783451_canvas.ec-ipad h2
+#m1335783451_canvas.ec-ipad .ec-description
+#m1335783451_canvas.ec-ipad .ec-description , #m1335783451_canvas.ec-ipad .ec-description-link , #m1335783451_canvas.ec-ipad .ec-footer
+.se_st_mypos_dropdown_icon
+.se_st_mypos_menu ul
+.se_st_mypos_menu .se_st_mypos_ul_border
+.se_st_mypos_menu li a
+.se_st_mypos_menu li a:hover
+.se_st_mypos_dropdown_icon
+.se_st_mypos_menu ul
+.se_st_mypos_menu .se_st_mypos_ul_border
+.se_st_mypos_menu li a
+.se_st_mypos_menu li a:hover
+.se_st_mypos_dropdown_icon
+.se_st_mypos_menu ul
+.se_st_mypos_menu .se_st_mypos_ul_border
+.se_st_mypos_menu li a
+.se_st_mypos_menu li a:hover

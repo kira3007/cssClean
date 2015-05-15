@@ -28,6 +28,21 @@ function hoverBri(page, options){
             }
         },100);
     });
+},
+
+/*
+ * hover 设置
+ * */
+function hoverSet(page, options){
+    return page.run(function(resolve){
+        this.evaluate(function(){
+            $('.pf').trigger("mouseover"); 
+        }); 
+
+        setTimeout(function(){
+            resolve(); 
+        },100);
+    });
 }
 
 ];
