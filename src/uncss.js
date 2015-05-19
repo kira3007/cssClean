@@ -7,7 +7,8 @@ var promise = require('bluebird'),
     isHTML = require('is-html'),
     isURL = require('is-absolute-url'),
     phantom = require('./phantom.js'),
-    uncss = require('./lib.js'),
+    uncss = require('./lib.js').uncss,
+    overrideCSS = require('./lib.js').override,
     utility = require('./utility.js'),
     _ = require('lodash');
 
@@ -70,6 +71,11 @@ function getStylesheets(files, options, pages) {
     });
 }
 
+function getCSS(files, options, pages, stylesheets){
+    var ret = getAllCSS(files, options, pages, stylesheets);
+    return [ret[0], ret[1], ret[2], _.uniq(ret[3])];  
+}
+
 /**
  * Get the contents of CSS files.
  * @param  {Array}   files       List of HTML files
@@ -78,7 +84,7 @@ function getStylesheets(files, options, pages) {
  * @param  {Array}   stylesheets List of CSS files , file stylesheets[0] is urls, and stylesheets[1] is inline styles
  * @return {promise}
  */
-function getCSS(files, options, pages, stylesheets) {
+function getAllCSS(files, options, pages, stylesheets) {
     /* inline styles */
     var styles = _.chain(stylesheets)
                   .map(function(fileStylesheet){
@@ -121,7 +127,7 @@ function getCSS(files, options, pages, stylesheets) {
                 return utility.parsePaths(files[i], sheets, options);
             })
             .flatten()
-            .uniq()
+            //.uniq()
             .value();
 
         stylesheets = utility.readStylesheets(stylesheets);
@@ -183,7 +189,7 @@ function process(files, options, pages, stylesheets) {
             return rule.selectors.join(' , '); 
         }).join('\n');
 
-        console.log(unusedSelector);
+        //console.log(unusedSelector);
 
         if (options.report) {
             report = {
@@ -194,6 +200,31 @@ function process(files, options, pages, stylesheets) {
         return new promise(function (resolve) {
             resolve([usedCss + '\n', report]);
         });
+    });
+}
+
+function processOverride(files, options, pages, stylesheets) {
+    if (!_.flatten(stylesheets).length) {
+        throw new Error('UnCSS: no stylesheets found');
+    }
+
+    var cssStr = stylesheets.join(' \n'),
+        parsed, report;
+
+    try {
+        parsed = css.parse(cssStr, { silent : true });
+    } catch (err) {
+        /* Try and construct a helpful error message */
+        throw utility.parseErrorMessage(err, cssStr);
+    }
+
+    return overrideCSS(pages, parsed.stylesheet, options.ignore).then(function (override) {
+        debugger;
+        override.forEach(function(rules){
+            console.log(css.stringify(rules));
+            console.log("\n========================\n");
+        });
+        return override; 
     });
 }
 
@@ -249,4 +280,33 @@ function init(files, options, callback) {
         .nodeify(callback, { spread: true });
 }
 
-module.exports = init;
+/*
+ * an extra function, remove arguments validate
+ * 流程类似init
+ * 功能：查找同名selector下被多次重复定义的属性
+ * */
+function findOverride(files, options, callback){
+    /* Assign default values to options, unless specified */
+    options = _.defaults(options, {
+        csspath: '',
+        ignore: [],
+        media: [],
+        timeout: 0,
+        report: false,
+        ignoreSheets: []
+    });   
+
+    return promise
+        .using(phantom.init(options.phantom), function () {
+            return getHTML(files, options)
+                .spread(getStylesheets)
+                .spread(getAllCSS)
+                .spread(processOverride);
+        })
+        .nodeify(callback, { spread: true });
+}
+
+module.exports = {
+    uncss : init, 
+    override : findOverride
+};

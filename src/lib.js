@@ -2,6 +2,7 @@
 
 var promise = require('bluebird'),
     phantom = require('./phantom.js'),
+    overrideCSS = require('./override.js'),
     _ = require('lodash');
 
 /* Some styles are applied only with user interaction, and therefore its
@@ -274,7 +275,7 @@ function filterNoDecalarationSelector(rules){
  * @param  {Array}   ignore     List of selectors to be ignored
  * @return {promise}
  */
-module.exports = function uncss(pages, stylesheet, ignore) {
+function uncss(pages, stylesheet, ignore) {
     /* filter selectors with no declarations*/
     stylesheet.rules = filterNoDecalarationSelector(stylesheet.rules);
 
@@ -292,4 +293,18 @@ module.exports = function uncss(pages, stylesheet, ignore) {
                 used: usedSelectors
             }];
     });
+}
+
+function override(pages, stylesheet, ignore){
+    /* filter selectors with no declarations*/
+    stylesheet.rules = filterNoDecalarationSelector(stylesheet.rules);
+
+    return new promise(function(resolve) {
+        resolve(overrideCSS(pages, stylesheet, ignore)); 
+    });
+}
+
+module.exports = {
+    uncss : uncss,
+    override : override
 };

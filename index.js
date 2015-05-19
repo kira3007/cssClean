@@ -3,7 +3,8 @@
 
     process.title = 'uncss';
 
-    var uncss = require('./src/uncss.js'),
+    var uncss = require('./src/uncss.js').uncss,
+        override = require('./src/uncss.js').override,
         //data = require('../package.json'),
         program = require('commander');
 
@@ -73,6 +74,13 @@
 
         /* If used from the command line, concatenate the output */
         uncss(program.args, options, function (err, css) {
+            if (err) {
+                throw err;
+            }
+            //console.log(css);
+        });
+
+        override(program.args, options, function (err, css) {
             if (err) {
                 throw err;
             }
